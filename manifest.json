@@ -1,0 +1,25 @@
+{
+  "name": "Mudar — Mudate sin estrés",
+  "short_name": "Mudar",
+  "description": "Cotizá tu mudanza, comparás empresas verificadas y contactás al instante.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F7F4EF",
+  "theme_color": "#FF5A1F",
+  "lang": "es-AR",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
