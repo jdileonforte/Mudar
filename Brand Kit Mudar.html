@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mudar — Brand Kit para Agencia</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+:root{
+  --orange:#FF5A1F;
+  --orange-dark:#E04A10;
+  --orange-light:#FFF0EB;
+  --black:#111111;
+  --bg:#F7F4EF;
+  --white:#FFFFFF;
+  --gray:#6B7280;
+  --gray-light:#E5E3DF;
+  --border:rgba(0,0,0,0.09);
+  --radius:16px;
+  --radius-sm:10px;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--black);overflow-x:hidden;}
+h1,h2,h3,h4,h5,h6{font-family:'Outfit',sans-serif;}
+
+/* ─── SIDEBAR NAV ─── */
+.layout{display:flex;min-height:100vh;}
+.sidebar{
+  width:240px;flex-shrink:0;background:var(--black);
+  position:sticky;top:0;height:100vh;overflow-y:auto;
+  display:flex;flex-direction:column;padding:28px 0;
+}
+.sidebar-brand{padding:0 20px 28px;border-bottom:1px solid rgba(255,255,255,0.07);}
+.logo-mark{width:38px;height:38px;background:var(--orange);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;box-shadow:0 4px 14px rgba(255,90,31,0.4);}
+.sidebar-name{font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:900;color:white;letter-spacing:-0.04em;}
+.sidebar-sub{font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.3);margin-top:2px;}
+.nav-group{padding:18px 0 0;}
+.nav-group-label{font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,0.22);padding:0 20px;margin-bottom:6px;}
+.nav-link{display:flex;align-items:center;gap:9px;padding:9px 20px;font-size:0.8rem;font-weight:500;color:rgba(255,255,255,0.45);cursor:pointer;transition:all 0.15s;text-decoration:none;border-left:2px solid transparent;}
+.nav-link:hover{color:white;background:rgba(255,255,255,0.04);}
+.nav-link.active{color:var(--orange);border-left-color:var(--orange);background:rgba(255,90,31,0.07);}
+.nav-icon{font-size:0.85rem;width:16px;text-align:center;}
+.sidebar-footer{margin-top:auto;padding:20px;border-top:1px solid rgba(255,255,255,0.07);}
+.sidebar-footer p{font-size:0.7rem;color:rgba(255,255,255,0.22);line-height:1.5;}
+.sidebar-footer span{color:var(--orange);}
+
+/* ─── MAIN CONTENT ─── */
+.main{flex:1;padding:0;}
+.section{padding:64px 60px;border-bottom:1px solid var(--border);}
+.section:last-child{border-bottom:none;}
+.section-num{font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);margin-bottom:8px;}
+.section-title{font-size:2rem;font-weight:900;letter-spacing:-0.04em;line-height:1.05;margin-bottom:8px;}
+.section-desc{font-size:0.88rem;color:var(--gray);max-width:600px;line-height:1.7;margin-bottom:36px;}
+
+/* ─── HERO SECTION ─── */
+.hero-section{background:var(--black);padding:80px 60px;position:relative;overflow:hidden;}
+.hero-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(255,90,31,0.15) 0%,transparent 65%);top:-200px;right:-100px;pointer-events:none;}
+.hero-tag{font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);margin-bottom:14px;}
+.hero-title{font-family:'Outfit',sans-serif;font-size:3rem;font-weight:900;letter-spacing:-0.05em;line-height:1.0;color:white;margin-bottom:16px;}
+.hero-title span{color:var(--orange);}
+.hero-sub{font-size:0.95rem;color:rgba(255,255,255,0.45);max-width:540px;line-height:1.7;margin-bottom:32px;}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{border-radius:50px;padding:6px 14px;font-size:0.72rem;font-weight:600;}
+.chip-o{background:rgba(255,90,31,0.12);border:1px solid rgba(255,90,31,0.25);color:var(--orange);}
+.chip-w{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.45);}
+
+/* ─── IDENTITY ─── */
+.identity-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:32px;}
+.id-card{background:white;border-radius:var(--radius);border:1.5px solid var(--border);padding:28px;}
+.id-card-icon{font-size:1.5rem;margin-bottom:12px;}
+.id-card h4{font-family:'Outfit',sans-serif;font-size:1rem;font-weight:800;margin-bottom:8px;}
+.id-card p{font-size:0.83rem;color:var(--gray);line-height:1.65;}
+.id-card-highlight{background:var(--orange);color:white;border:none;}
+.id-card-highlight h4,.id-card-highlight p{color:white;}
+.id-card-highlight p{color:rgba(255,255,255,0.8);}
+
+.tagline-box{background:var(--black);border-radius:var(--radius);padding:32px;text-align:center;margin-bottom:32px;}
+.tagline-box .tagline{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:900;color:white;letter-spacing:-0.04em;}
+.tagline-box .tagline span{color:var(--orange);}
+.tagline-box p{font-size:0.78rem;color:rgba(255,255,255,0.3);margin-top:8px;text-transform:uppercase;letter-spacing:0.1em;}
+
+/* ─── VALORES ─── */
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.val-card{background:white;border:1.5px solid var(--border);border-radius:var(--radius);padding:24px;}
+.val-icon{width:40px;height:40px;border-radius:10px;background:var(--orange-light);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:14px;}
+.val-card h4{font-size:0.9rem;font-weight:800;margin-bottom:6px;}
+.val-card p{font-size:0.78rem;color:var(--gray);line-height:1.6;}
+
+/* ─── COLORES ─── */
+.colors-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px;}
+.color-swatch{border-radius:var(--radius);overflow:hidden;border:1.5px solid var(--border);}
+.swatch-block{height:120px;position:relative;}
+.swatch-copy{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.3);border-radius:6px;padding:3px 8px;font-size:0.65rem;font-weight:700;color:white;cursor:pointer;transition:background 0.15s;font-family:'DM Sans',sans-serif;border:none;}
+.swatch-copy:hover{background:rgba(0,0,0,0.6);}
+.swatch-info{background:white;padding:14px 16px;}
+.swatch-name{font-size:0.8rem;font-weight:700;margin-bottom:2px;}
+.swatch-hex{font-size:0.72rem;color:var(--gray);font-family:monospace;}
+.swatch-use{font-size:0.68rem;color:var(--gray);margin-top:4px;line-height:1.4;}
+
+.color-usage{background:white;border-radius:var(--radius);border:1.5px solid var(--border);padding:24px;}
+.color-usage h4{font-size:0.85rem;font-weight:700;margin-bottom:16px;}
+.usage-row{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+.usage-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;}
+.usage-text{font-size:0.78rem;color:var(--gray);}
+.usage-text strong{color:var(--black);}
+
+/* ─── TIPOGRAFÍA ─── */
+.typo-showcase{background:white;border-radius:var(--radius);border:1.5px solid var(--border);padding:36px;margin-bottom:20px;}
+.font-label{font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;}
+.font-name{font-family:'Outfit',sans-serif;font-size:3rem;font-weight:900;letter-spacing:-0.05em;margin-bottom:4px;}
+.font-sub{font-size:0.78rem;color:var(--gray);margin-bottom:20px;}
+.font-weights{display:flex;flex-wrap:wrap;gap:12px;}
+.fw-sample{background:var(--bg);border-radius:8px;padding:10px 16px;}
+.fw-label{font-size:0.6rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--gray);margin-bottom:4px;}
+.fw-text-outfit{font-family:'Outfit',sans-serif;font-size:1.2rem;color:var(--black);}
+.fw-text-dm{font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--black);}
+
+.typo-rules{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.typo-rule{background:white;border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:20px;}
+.typo-rule h5{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--orange);margin-bottom:8px;}
+.typo-rule p{font-size:0.78rem;color:var(--gray);line-height:1.6;}
+
+/* ─── LOGO ─── */
+.logo-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px;}
+.logo-variant{border-radius:var(--radius);border:1.5px solid var(--border);overflow:hidden;}
+.logo-bg{padding:40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;}
+.logo-bg-dark{background:var(--black);}
+.logo-bg-light{background:var(--bg);}
+.logo-bg-orange{background:var(--orange);}
+.logo-bg-white{background:white;}
+.logo-caption{background:white;padding:14px;text-align:center;}
+.logo-caption h5{font-size:0.8rem;font-weight:700;margin-bottom:2px;}
+.logo-caption p{font-size:0.68rem;color:var(--gray);}
+
+/* Truck SVG logo */
+.logo-full{display:flex;align-items:center;gap:10px;}
+.logo-icon-wrap{background:var(--orange);border-radius:10px;padding:7px;display:flex;align-items:center;justify-content:center;}
+.logo-wordmark{font-family:'Outfit',sans-serif;font-weight:900;letter-spacing:-0.05em;line-height:1;}
+
+.logo-rules{background:var(--orange-light);border-radius:var(--radius);padding:24px;border:1px solid rgba(255,90,31,0.15);}
+.logo-rules h4{font-size:0.85rem;font-weight:700;color:var(--orange-dark);margin-bottom:14px;}
+.logo-rule-item{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start;}
+.logo-rule-item span{font-size:0.85rem;flex-shrink:0;}
+.logo-rule-item p{font-size:0.78rem;color:var(--orange-dark);line-height:1.5;}
+
+/* ─── VOZ Y TONO ─── */
+.tone-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;}
+.tone-card{background:white;border-radius:var(--radius);border:1.5px solid var(--border);padding:24px;}
+.tone-card.green-border{border-left:3px solid #22C55E;}
+.tone-card.red-border{border-left:3px solid #EF4444;}
+.tone-card h4{font-size:0.8rem;font-weight:700;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.08em;}
+.tone-card.green-border h4{color:#15803D;}
+.tone-card.red-border h4{color:#DC2626;}
+.tone-item{font-size:0.82rem;color:var(--gray);margin-bottom:7px;padding-left:14px;position:relative;line-height:1.5;}
+.tone-item::before{position:absolute;left:0;font-weight:700;}
+.tone-card.green-border .tone-item::before{content:'✓';color:#22C55E;}
+.tone-card.red-border .tone-item::before{content:'✗';color:#EF4444;}
+
+.examples-list{display:flex;flex-direction:column;gap:12px;}
+.example-item{background:white;border-radius:var(--radius-sm);border:1.5px solid var(--border);padding:18px 20px;}
+.example-context{font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--orange);margin-bottom:6px;}
+.example-copy{font-size:0.88rem;color:var(--black);line-height:1.6;font-style:italic;}
+
+/* ─── AUDIENCIAS ─── */
+.audience-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.audience-card{border-radius:var(--radius);overflow:hidden;border:1.5px solid var(--border);}
+.aud-header{padding:24px;display:flex;align-items:flex-start;gap:14px;}
+.aud-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.aud-icon-user{background:var(--orange-light);}
+.aud-icon-fletero{background:rgba(17,17,17,0.08);}
+.aud-header-text h3{font-size:1rem;font-weight:800;margin-bottom:3px;}
+.aud-header-text p{font-size:0.78rem;color:var(--gray);}
+.aud-body{background:white;padding:20px 24px;}
+.aud-row{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start;}
+.aud-row-icon{font-size:0.85rem;flex-shrink:0;margin-top:1px;}
+.aud-row-text{font-size:0.8rem;color:var(--gray);line-height:1.5;}
+.aud-row-text strong{color:var(--black);}
+.aud-card-user .aud-header{background:var(--orange-light);}
+.aud-card-fletero .aud-header{background:var(--bg);}
+
+/* ─── PRODUCTO ─── */
+.product-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px;}
+.product-card{background:white;border-radius:var(--radius);border:1.5px solid var(--border);padding:24px;}
+.product-badge{display:inline-flex;align-items:center;gap:6px;background:var(--orange-light);border-radius:50px;padding:4px 12px;font-size:0.68rem;font-weight:700;color:var(--orange);margin-bottom:14px;}
+.product-card h4{font-size:0.95rem;font-weight:800;margin-bottom:8px;}
+.product-card p{font-size:0.8rem;color:var(--gray);line-height:1.6;}
+
+.model-card{background:var(--black);border-radius:var(--radius);padding:32px;color:white;margin-bottom:20px;}
+.model-card h3{font-size:1.2rem;font-weight:900;color:white;margin-bottom:6px;}
+.model-card p{font-size:0.85rem;color:rgba(255,255,255,0.5);margin-bottom:24px;}
+.model-plans{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.plan-card{border-radius:var(--radius-sm);padding:18px;border:1px solid rgba(255,255,255,0.08);}
+.plan-card h5{font-size:0.85rem;font-weight:700;color:white;margin-bottom:4px;}
+.plan-card p{font-size:0.75rem;color:rgba(255,255,255,0.45);}
+.plan-card.highlighted{background:rgba(255,90,31,0.1);border-color:rgba(255,90,31,0.25);}
+.plan-card.highlighted h5{color:var(--orange);}
+
+/* ─── ROADMAP ─── */
+.roadmap-list{display:flex;flex-direction:column;gap:0;position:relative;padding-left:28px;}
+.roadmap-list::before{content:'';position:absolute;left:10px;top:12px;bottom:12px;width:2px;background:var(--gray-light);}
+.rm-item{position:relative;padding-bottom:28px;}
+.rm-item:last-child{padding-bottom:0;}
+.rm-dot{position:absolute;left:-23px;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:800;z-index:1;}
+.rm-dot.done{background:var(--orange);color:white;}
+.rm-dot.now{background:var(--black);color:white;box-shadow:0 0 0 4px rgba(255,90,31,0.2);}
+.rm-dot.soon{background:white;border:2px solid var(--gray-light);color:var(--gray);}
+.rm-item-date{font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--orange);margin-bottom:3px;}
+.rm-item-title{font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:800;margin-bottom:4px;}
+.rm-item-desc{font-size:0.78rem;color:var(--gray);line-height:1.6;max-width:520px;}
+.rm-item-tag{display:inline-flex;background:var(--orange-light);color:var(--orange);font-size:0.62rem;font-weight:700;padding:2px 10px;border-radius:50px;margin-left:8px;vertical-align:middle;}
+
+/* ─── POSICIONAMIENTO ─── */
+.pos-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:28px;}
+.pos-card{background:white;border-radius:var(--radius);border:1.5px solid var(--border);padding:22px;}
+.pos-card h4{font-size:0.85rem;font-weight:800;margin-bottom:6px;}
+.pos-card p{font-size:0.78rem;color:var(--gray);line-height:1.6;}
+.pos-separator{width:32px;height:3px;background:var(--orange);border-radius:2px;margin-bottom:10px;}
+
+.diff-table{width:100%;border-collapse:collapse;background:white;border-radius:var(--radius);overflow:hidden;border:1.5px solid var(--border);}
+.diff-table th{background:var(--black);color:white;font-family:'Outfit',sans-serif;font-size:0.75rem;font-weight:700;padding:12px 16px;text-align:left;}
+.diff-table th:first-child{border-radius:0;}
+.diff-table td{padding:11px 16px;font-size:0.78rem;border-bottom:1px solid var(--border);color:var(--gray);}
+.diff-table tr:last-child td{border-bottom:none;}
+.diff-table td.highlight{color:var(--orange);font-weight:700;}
+.diff-table tr:hover td{background:var(--bg);}
+
+/* ─── ALIANZAS ─── */
+.alliance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.alliance-card{background:white;border-radius:var(--radius);border:1.5px solid var(--border);padding:22px;}
+.alliance-card-icon{font-size:1.5rem;margin-bottom:10px;}
+.alliance-card h4{font-size:0.88rem;font-weight:800;margin-bottom:6px;}
+.alliance-card p{font-size:0.78rem;color:var(--gray);line-height:1.6;}
+.alliance-card .status{display:inline-flex;align-items:center;gap:5px;font-size:0.65rem;font-weight:700;margin-top:10px;padding:3px 10px;border-radius:50px;}
+.status.active{background:#DCFCE7;color:#15803D;}
+.status.upcoming{background:var(--orange-light);color:var(--orange);}
+.status.future{background:var(--bg);color:var(--gray);border:1px solid var(--gray-light);}
+
+/* ─── REDES SOCIALES ─── */
+.social-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px;}
+.social-card{background:white;border-radius:var(--radius);border:1.5px solid var(--border);padding:24px;}
+.social-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.social-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;}
+.social-icon-ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);}
+.social-card h4{font-size:0.88rem;font-weight:800;margin-bottom:8px;}
+.social-card p{font-size:0.78rem;color:var(--gray);line-height:1.6;margin-bottom:10px;}
+.social-tag{display:inline-flex;background:var(--bg);color:var(--gray);font-size:0.68rem;font-weight:600;padding:3px 10px;border-radius:50px;margin-right:5px;margin-bottom:5px;}
+
+.content-pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.pillar{background:white;border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-align:center;}
+.pillar-icon{font-size:1.3rem;margin-bottom:8px;}
+.pillar h5{font-size:0.78rem;font-weight:700;margin-bottom:4px;}
+.pillar p{font-size:0.68rem;color:var(--gray);line-height:1.4;}
+.pillar-pct{font-size:0.65rem;font-weight:700;color:var(--orange);margin-top:6px;}
+
+/* ─── COPY EXAMPLES ─── */
+.copy-grid{display:flex;flex-direction:column;gap:12px;}
+.copy-card{background:white;border-radius:var(--radius-sm);border:1.5px solid var(--border);padding:18px 20px;}
+.copy-label{font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--orange);margin-bottom:6px;}
+.copy-text{font-size:0.85rem;color:var(--black);line-height:1.65;}
+.copy-note{font-size:0.7rem;color:var(--gray);margin-top:6px;font-style:italic;}
+
+/* ─── DO / DON'T ─── */
+.dont-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.dont-col h4{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;}
+.dont-col.good h4{color:#15803D;}
+.dont-col.bad h4{color:#DC2626;}
+.dont-item{background:white;border-radius:var(--radius-sm);padding:14px 16px;font-size:0.8rem;line-height:1.5;margin-bottom:8px;border:1.5px solid var(--border);}
+.dont-col.good .dont-item{border-left:3px solid #22C55E;color:var(--black);}
+.dont-col.bad .dont-item{border-left:3px solid #EF4444;color:var(--gray);text-decoration:line-through;text-decoration-color:rgba(239,68,68,0.4);}
+
+/* ─── RESPONSIVE / PRINT ─── */
+@media print{
+  .sidebar{display:none;}
+  .main{padding:0;}
+  .section{page-break-inside:avoid;}
+}
+@media(max-width:900px){
+  .layout{flex-direction:column;}
+  .sidebar{width:100%;height:auto;position:static;flex-direction:row;flex-wrap:wrap;padding:16px;}
+  .nav-group{padding:8px 0 0;}
+  .section{padding:40px 28px;}
+  .colors-grid,.logo-grid,.values-grid,.pos-grid{grid-template-columns:1fr 1fr;}
+  .content-pillars{grid-template-columns:1fr 1fr;}
+}
+
+/* ─── SCROLL REVEAL ─── */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity 0.5s ease,transform 0.5s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+/* ─── TOAST ─── */
+#toast{position:fixed;bottom:24px;right:24px;background:var(--black);color:white;padding:10px 18px;border-radius:50px;font-size:0.78rem;font-weight:600;z-index:9999;opacity:0;transform:translateY(8px);transition:all 0.25s;pointer-events:none;}
+#toast.show{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+<div id="toast"></div>
+
+<div class="layout">
+
+<!-- ═══ SIDEBAR ═══ -->
+<aside class="sidebar">
+  <div class="sidebar-brand">
+    <div class="logo-mark">
+      <svg width="22" height="22" viewBox="0 0 38 38" fill="none">
+        <rect x="4" y="11" width="20" height="14" rx="2.5" fill="white"/>
+        <path d="M24 15H31L34 21V25H24V15Z" fill="white"/>
+        <rect x="25.5" y="16.5" width="5" height="4" rx="1" fill="#FF5A1F"/>
+        <circle cx="10" cy="27.5" r="3.5" fill="white" stroke="#FF5A1F" stroke-width="1.8"/>
+        <circle cx="10" cy="27.5" r="1.2" fill="#FF5A1F"/>
+        <circle cx="28" cy="27.5" r="3.5" fill="white" stroke="#FF5A1F" stroke-width="1.8"/>
+        <circle cx="28" cy="27.5" r="1.2" fill="#FF5A1F"/>
+      </svg>
+    </div>
+    <div class="sidebar-name">Mudar</div>
+    <div class="sidebar-sub">Brand Kit</div>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">Identidad</div>
+    <a class="nav-link active" href="#intro"><span class="nav-icon">🏠</span> Quiénes somos</a>
+    <a class="nav-link" href="#mision"><span class="nav-icon">🎯</span> Misión & valores</a>
+    <a class="nav-link" href="#audiencias"><span class="nav-icon">👥</span> Audiencias</a>
+    <a class="nav-link" href="#posicionamiento"><span class="nav-icon">📍</span> Posicionamiento</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">Visual</div>
+    <a class="nav-link" href="#logo"><span class="nav-icon">🔶</span> Logo</a>
+    <a class="nav-link" href="#colores"><span class="nav-icon">🎨</span> Colores</a>
+    <a class="nav-link" href="#tipografia"><span class="nav-icon">Aa</span> Tipografía</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">Comunicación</div>
+    <a class="nav-link" href="#voz"><span class="nav-icon">🗣️</span> Voz & tono</a>
+    <a class="nav-link" href="#copys"><span class="nav-icon">✍️</span> Copys & ejemplos</a>
+    <a class="nav-link" href="#redes"><span class="nav-icon">📱</span> Redes sociales</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">Negocio</div>
+    <a class="nav-link" href="#producto"><span class="nav-icon">⚙️</span> Producto & modelo</a>
+    <a class="nav-link" href="#alianzas"><span class="nav-icon">🤝</span> Alianzas</a>
+    <a class="nav-link" href="#roadmap"><span class="nav-icon">🗺️</span> Roadmap</a>
+  </div>
+
+  <div class="sidebar-footer">
+    <p>Confidencial.<br/>Para uso interno de agencia.<br/><span>mudar.ar</span> · jdileonforte@mudar.ar</p>
+  </div>
+</aside>
+
+<!-- ═══ MAIN ═══ -->
+<main class="main">
+
+  <!-- HERO -->
+  <div class="hero-section" id="intro">
+    <div class="hero-glow"></div>
+    <div class="hero-tag">Brand Kit</div>
+    <h1 class="hero-title">Todo lo que necesitás<br/>saber sobre <span>Mudar</span></h1>
+    <p class="hero-sub">Este documento es la referencia completa de identidad, comunicación y estrategia de Mudar. La coherencia de marca empieza acá.</p>
+    <div class="hero-chips">
+      <span class="chip chip-o">🚚 Marketplace de mudanzas</span>
+      <span class="chip chip-o">📍 CABA & GBA — con expansión nacional</span>
+      <span class="chip chip-w">Web: mudar.ar</span>
+      <span class="chip chip-w">Instagram: @Mudar_ar</span>
+    </div>
+  </div>
+
+  <!-- ═══ QUIÉNES SOMOS ═══ -->
+  <div class="section reveal" id="quienes">
+    <div class="section-num">01 — Identidad</div>
+    <h2 class="section-title">¿Qué es Mudar?</h2>
+    <p class="section-desc">La primera plataforma digital de mudanzas de Argentina. Conectamos a personas que necesitan mudarse con empresas de mudanzas verificadas — de forma simple, transparente y sin sorpresas.</p>
+
+    <div class="tagline-box">
+      <div class="tagline">"Mudate <span>sin estrés</span>"</div>
+      <p>Tagline oficial — usar siempre</p>
+    </div>
+
+    <div class="identity-grid reveal">
+      <div class="id-card id-card-highlight">
+        <div class="id-card-icon">🚀</div>
+        <h4>El problema que resolvemos</h4>
+        <p>Mudarse en Argentina es caótico. Los presupuestos se consiguen por WhatsApp, los precios son opacos, y no hay forma de comparar opciones confiables. Mudar cambia eso.</p>
+      </div>
+      <div class="id-card">
+        <div class="id-card-icon">💡</div>
+        <h4>La solución</h4>
+        <p>Un marketplace donde los usuarios cotizan en 2 minutos, comparan empresas verificadas con precios reales, y contactan directamente. Sin intermediarios. Sin comisiones. Sin sorpresas.</p>
+      </div>
+      <div class="id-card">
+        <div class="id-card-icon">🏢</div>
+        <h4>Para las empresas de mudanzas</h4>
+        <p>Presencia digital profesional, herramientas de gestión (cotizador, agenda, panel), y visibilidad en un mercado que hoy funciona por boca a boca y grupos de WhatsApp.</p>
+      </div>
+      <div class="id-card">
+        <div class="id-card-icon">📊</div>
+        <h4>Modelo de negocio</h4>
+        <p>El modelo exacto está en definición, pero la dirección es un componente fijo (visibilidad y herramientas) más un variable (por lead o mudanza concretada). Los usuarios siempre cotizan gratis.</p>
+      </div>
+    </div>
+
+    <div style="background:white;border-radius:var(--radius);border:1.5px solid var(--border);padding:28px;margin-top:20px;" class="reveal">
+      <h4 style="font-size:0.85rem;font-weight:700;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.08em;">Un párrafo que lo resume todo</h4>
+      <p style="font-size:1rem;line-height:1.75;color:var(--black);">Mudar es el primer marketplace digital de mudanzas de Argentina. Nació para ponerle fin al caos de buscar un flete: cotizaciones por WhatsApp, precios imposibles de comparar, y empresas sin presencia formal. En Mudar, el usuario carga su mudanza en 2 minutos, recibe presupuestos de empresas verificadas con precios reales, y contacta directamente — sin intermediarios, sin comisiones, sin sorpresas. Para las empresas de mudanzas, Mudar es su primera presencia digital profesional: visibilidad, gestión de pedidos, cotizador automático y agenda unificada. Ambos lados del mercado ganan.</p>
+    </div>
+  </div>
+
+  <!-- ═══ MISIÓN & VALORES ═══ -->
+  <div class="section reveal" id="mision">
+    <div class="section-num">02 — Misión & valores</div>
+    <h2 class="section-title">En qué creemos</h2>
+    <p class="section-desc">Estos valores no son decorativos. Deben verse reflejados en cada pieza de comunicación.</p>
+
+    <div class="values-grid reveal">
+      <div class="val-card">
+        <div class="val-icon">🤝</div>
+        <h4>Los fleteros son aliados</h4>
+        <p>Las empresas de mudanzas no son el problema — son el motor del negocio. Mudar existe para potenciarlas, no para reemplazarlas ni criticarlas. Siempre hablar de ellas con respeto y como protagonistas.</p>
+      </div>
+      <div class="val-card">
+        <div class="val-icon">🔍</div>
+        <h4>Transparencia total</h4>
+        <p>Precios claros, empresas verificadas, sin costos ocultos. La transparencia es nuestra promesa más importante al usuario. No hacer promesas que no podemos cumplir aún.</p>
+      </div>
+      <div class="val-card">
+        <div class="val-icon">⚡</div>
+        <h4>Simplicidad radical</h4>
+        <p>2 minutos para cotizar. Así de simple. Cada funcionalidad, cada copy, cada diseño debe hacer la vida más fácil — no más complicada.</p>
+      </div>
+      <div class="val-card">
+        <div class="val-icon">🇦🇷</div>
+        <h4>Argentino de verdad</h4>
+        <p>Somos una startup argentina, con lenguaje argentino, para un mercado argentino. Nada de copy genérico o corporativo. El voseo, la calidez y lo directo son parte de la identidad.</p>
+      </div>
+      <div class="val-card">
+        <div class="val-icon">🌱</div>
+        <h4>Crecimiento responsable</h4>
+        <p>Validamos antes de escalar. No prometemos lo que no existe. La honestidad sobre el stage del producto es parte de la marca.</p>
+      </div>
+      <div class="val-card">
+        <div class="val-icon">💪</div>
+        <h4>Sin intermediarios</h4>
+        <p>El dinero del servicio va directo al fletero. Mudar no intermedia en los pagos. El modelo combina un componente fijo y uno variable — alineando los incentivos: Mudar crece cuando las empresas crecen.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ AUDIENCIAS ═══ -->
+  <div class="section reveal" id="audiencias">
+    <div class="section-num">03 — Audiencias</div>
+    <h2 class="section-title">A quiénes le hablamos</h2>
+    <p class="section-desc">Mudar tiene dos audiencias distintas con necesidades muy diferentes. Cada pieza de comunicación debe tener claro a quién le habla.</p>
+
+    <div class="audience-grid reveal">
+      <div class="audience-card aud-card-user">
+        <div class="aud-header">
+          <div class="aud-icon aud-icon-user">🏠</div>
+          <div class="aud-header-text">
+            <h3>Usuario / Persona que se muda</h3>
+            <p>Audiencia primaria del producto web</p>
+          </div>
+        </div>
+        <div class="aud-body">
+          <div class="aud-row"><span class="aud-row-icon">👤</span><div class="aud-row-text"><strong>Perfil:</strong> 25-45 años, CABA/GBA. Inquilinos, propietarios, estudiantes que cambian de barrio. Cualquier persona que necesite mudarse.</div></div>
+          <div class="aud-row"><span class="aud-row-icon">😤</span><div class="aud-row-text"><strong>Pain point:</strong> No saben a quién llamar. Piden presupuestos por WhatsApp y los precios varían muchísimo. Miedo a que les cobren de más o que no cumplan.</div></div>
+          <div class="aud-row"><span class="aud-row-icon">✨</span><div class="aud-row-text"><strong>Lo que quieren:</strong> Saber cuánto sale su mudanza rápido, comparar opciones reales, y confiar en que la empresa va a aparecer el día pactado.</div></div>
+          <div class="aud-row"><span class="aud-row-icon">📣</span><div class="aud-row-text"><strong>Cómo hablarles:</strong> Directo, empático, sin tecnicismos. Hablar de tranquilidad, control, sin sorpresas. Voseo. Tono cercano.</div></div>
+          <div class="aud-row"><span class="aud-row-icon">🎯</span><div class="aud-row-text"><strong>CTA:</strong> <em>"Cotizá gratis en mudar.ar"</em></div></div>
+        </div>
+      </div>
+
+      <div class="audience-card aud-card-fletero">
+        <div class="aud-header">
+          <div class="aud-icon aud-icon-fletero">🚛</div>
+          <div class="aud-header-text">
+            <h3>Fletero / Empresa de mudanzas</h3>
+            <p>Audiencia del panel y onboarding B2B</p>
+          </div>
+        </div>
+        <div class="aud-body">
+          <div class="aud-row"><span class="aud-row-icon">👤</span><div class="aud-row-text"><strong>Perfil:</strong> Dueños de empresas de mudanzas en CABA/GBA. Desde el autónomo con un camión hasta empresas medianas con 3-5 empleados. Poco tech-savvy. Operan por WhatsApp y referencias.</div></div>
+          <div class="aud-row"><span class="aud-row-icon">😤</span><div class="aud-row-text"><strong>Pain point:</strong> Consiguen clientes solo por boca a boca. No tienen presencia online. Los meses flojos son muy flojos. No tienen herramientas para gestionar bien.</div></div>
+          <div class="aud-row"><span class="aud-row-icon">✨</span><div class="aud-row-text"><strong>Lo que quieren:</strong> Más clientes, de forma constante. Aparecer cuando alguien busca un flete. Gestionar mejor sin complicarse.</div></div>
+          <div class="aud-row"><span class="aud-row-icon">📣</span><div class="aud-row-text"><strong>Cómo hablarles:</strong> Con respeto profundo. Son aliados, no clientes genéricos. Hablar de su independencia, su autonomía. Nunca dar a entender que Mudar los reemplaza o les cambia cómo trabajan.</div></div>
+          <div class="aud-row"><span class="aud-row-icon">🎯</span><div class="aud-row-text"><strong>CTA:</strong> <em>"Sumá tu empresa en mudar.ar"</em></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ POSICIONAMIENTO ═══ -->
+  <div class="section reveal" id="posicionamiento">
+    <div class="section-num">04 — Posicionamiento</div>
+    <h2 class="section-title">Dónde estamos parados</h2>
+    <p class="section-desc">Mudar no compite con ninguna plataforma digital existente en Argentina (el mercado está vacío). Compite contra el desorden: WhatsApp, grupos de Facebook, boca a boca.</p>
+
+    <div class="pos-grid reveal">
+      <div class="pos-card">
+        <div class="pos-separator"></div>
+        <h4>Posicionamiento de marca</h4>
+        <p>La plataforma de mudanzas de confianza de Argentina. El lugar donde vas cuando necesitás mudarte y querés saber cuánto sale, comparar opciones reales y no llevarte sorpresas.</p>
+      </div>
+      <div class="pos-card">
+        <div class="pos-separator"></div>
+        <h4>Diferencial principal</h4>
+        <p>Primer marketplace digital del rubro en Argentina. Empresas verificadas. El dinero va directo al fletero — Mudar cobra una combinación de fijo + variable. Cotización en 2 minutos.</p>
+      </div>
+      <div class="pos-card">
+        <div class="pos-separator"></div>
+        <h4>Cobertura geográfica</h4>
+        <p>Arrancamos en <strong>CABA y GBA</strong> — el mercado más grande del país — con la visión clara de expandirnos a Córdoba, Rosario, Mendoza y luego al resto de Argentina. La ambición es ser la plataforma de mudanzas de todo el país.</p>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:8px;">
+      <table class="diff-table">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Mudar</th>
+            <th>WhatsApp / boca a boca</th>
+            <th>Clasificados (MercadoLibre, etc.)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cotización</td>
+            <td class="highlight">Automática en 2 minutos</td>
+            <td>Manual, días de ida y vuelta</td>
+            <td>Manual, contactar a c/anuncio</td>
+          </tr>
+          <tr>
+            <td>Comparación de precios</td>
+            <td class="highlight">Sí, en un solo lugar</td>
+            <td>No, imposible de comparar</td>
+            <td>Parcial, sin estructura</td>
+          </tr>
+          <tr>
+            <td>Empresas verificadas</td>
+            <td class="highlight">Sí, proceso de verificación</td>
+            <td>No hay garantía</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Comisión por trabajo</td>
+            <td class="highlight">Fijo + variable (en definición)</td>
+            <td>N/A</td>
+            <td>Varía</td>
+          </tr>
+          <tr>
+            <td>Panel de gestión</td>
+            <td class="highlight">Sí (agenda, cotizador, pedidos)</td>
+            <td>No</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══ LOGO ═══ -->
+  <div class="section reveal" id="logo">
+    <div class="section-num">05 — Logo</div>
+    <h2 class="section-title">El logo de Mudar</h2>
+    <p class="section-desc">El logo combina un ícono de camión blanco sobre fondo naranja redondeado + el wordmark "Mudar" en negro. Simple, reconocible, escalable.</p>
+
+    <div class="logo-grid reveal">
+      <!-- Versión principal sobre fondo claro -->
+      <div class="logo-variant">
+        <div class="logo-bg logo-bg-light">
+          <div class="logo-full">
+            <div class="logo-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 38 38" fill="none">
+                <rect x="4" y="11" width="20" height="14" rx="2.5" fill="white"/>
+                <path d="M24 15H31L34 21V25H24V15Z" fill="white"/>
+                <rect x="25.5" y="16.5" width="5" height="4" rx="1" fill="#FF5A1F"/>
+                <circle cx="10" cy="27.5" r="3.5" fill="white" stroke="#FF5A1F" stroke-width="1.8"/>
+                <circle cx="10" cy="27.5" r="1.2" fill="#FF5A1F"/>
+                <circle cx="28" cy="27.5" r="3.5" fill="white" stroke="#FF5A1F" stroke-width="1.8"/>
+                <circle cx="28" cy="27.5" r="1.2" fill="#FF5A1F"/>
+              </svg>
+            </div>
+            <div class="logo-wordmark" style="font-size:2rem;color:#111;">Mudar</div>
+          </div>
+        </div>
+        <div class="logo-caption">
+          <h5>Principal — Fondo claro</h5>
+          <p>Uso preferido en fondos #F7F4EF o blancos</p>
+        </div>
+      </div>
+
+      <!-- Versión sobre fondo oscuro -->
+      <div class="logo-variant">
+        <div class="logo-bg logo-bg-dark">
+          <div class="logo-full">
+            <div class="logo-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 38 38" fill="none">
+                <rect x="4" y="11" width="20" height="14" rx="2.5" fill="white"/>
+                <path d="M24 15H31L34 21V25H24V15Z" fill="white"/>
+                <rect x="25.5" y="16.5" width="5" height="4" rx="1" fill="#FF5A1F"/>
+                <circle cx="10" cy="27.5" r="3.5" fill="white" stroke="#FF5A1F" stroke-width="1.8"/>
+                <circle cx="10" cy="27.5" r="1.2" fill="#FF5A1F"/>
+                <circle cx="28" cy="27.5" r="3.5" fill="white" stroke="#FF5A1F" stroke-width="1.8"/>
+                <circle cx="28" cy="27.5" r="1.2" fill="#FF5A1F"/>
+              </svg>
+            </div>
+            <div class="logo-wordmark" style="font-size:2rem;color:white;">Mudar</div>
+          </div>
+        </div>
+        <div class="logo-caption">
+          <h5>Principal — Fondo oscuro</h5>
+          <p>Wordmark en blanco sobre #111111</p>
+        </div>
+      </div>
+
+      <!-- Ícono solo (Instagram) -->
+      <div class="logo-variant">
+        <div class="logo-bg logo-bg-orange">
+          <div style="width:80px;height:80px;background:var(--orange);border-radius:20px;display:flex;align-items:center;justify-content:center;">
+            <svg width="48" height="48" viewBox="0 0 38 38" fill="none">
+              <rect x="4" y="11" width="20" height="14" rx="2.5" fill="white"/>
+              <path d="M24 15H31L34 21V25H24V15Z" fill="white"/>
+              <rect x="25.5" y="16.5" width="5" height="4" rx="1" fill="#FF5A1F"/>
+              <circle cx="10" cy="27.5" r="3.5" fill="white" stroke="rgba(255,255,255,0.3)" stroke-width="1.8"/>
+              <circle cx="10" cy="27.5" r="1.2" fill="#FF5A1F"/>
+              <circle cx="28" cy="27.5" r="3.5" fill="white" stroke="rgba(255,255,255,0.3)" stroke-width="1.8"/>
+              <circle cx="28" cy="27.5" r="1.2" fill="#FF5A1F"/>
+            </svg>
+          </div>
+        </div>
+        <div class="logo-caption">
+          <h5>Ícono solo (800×800px)</h5>
+          <p>Para foto de perfil de Instagram y favicon</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="logo-rules reveal">
+      <h4>⚠️ Reglas de uso del logo</h4>
+      <div class="logo-rule-item"><span>✅</span><p>Usar sobre fondos blancos, #F7F4EF (fondo claro oficial) o #111111 (negro)</p></div>
+      <div class="logo-rule-item"><span>✅</span><p>Mantener proporciones originales — nunca deformar ni estirar</p></div>
+      <div class="logo-rule-item"><span>✅</span><p>Respetar el espacio de respiro alrededor del logo (mínimo equivalente a la altura de la "M")</p></div>
+      <div class="logo-rule-item"><span>❌</span><p>No cambiar el color del ícono ni del wordmark por colores no aprobados</p></div>
+      <div class="logo-rule-item"><span>❌</span><p>No agregar efectos (sombras, gradientes, contornos) al logo</p></div>
+      <div class="logo-rule-item"><span>❌</span><p>No usar el ícono naranja sobre fondo naranja</p></div>
+    </div>
+  </div>
+
+  <!-- ═══ COLORES ═══ -->
+  <div class="section reveal" id="colores">
+    <div class="section-num">06 — Paleta de colores</div>
+    <h2 class="section-title">Los colores de Mudar</h2>
+    <p class="section-desc">4 colores. Simples. El naranja es el alma de la marca — todo lo demás lo complementa. Nunca usar colores fuera de esta paleta.</p>
+
+    <div class="colors-grid reveal">
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#FF5A1F;">
+          <button class="swatch-copy" onclick="copyText('#FF5A1F')">Copiar</button>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Naranja Mudar</div>
+          <div class="swatch-hex">#FF5A1F</div>
+          <div class="swatch-use">Color principal. CTAs, íconos, acentos, logo, highlights.</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#111111;">
+          <button class="swatch-copy" onclick="copyText('#111111')" style="background:rgba(255,255,255,0.15);">Copiar</button>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Negro Mudar</div>
+          <div class="swatch-hex">#111111</div>
+          <div class="swatch-use">Textos principales, fondos oscuros, navbar, wordmark.</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#F7F4EF;border-bottom:1px solid var(--border);">
+          <button class="swatch-copy" onclick="copyText('#F7F4EF')" style="background:rgba(0,0,0,0.1);color:#111;">Copiar</button>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Crema / Fondo</div>
+          <div class="swatch-hex">#F7F4EF</div>
+          <div class="swatch-use">Fondo principal del sitio. Cálido y limpio. No usar blanco puro como bg.</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#FFFFFF;border-bottom:1px solid var(--border);">
+          <button class="swatch-copy" onclick="copyText('#FFFFFF')" style="background:rgba(0,0,0,0.08);color:#111;">Copiar</button>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Blanco</div>
+          <div class="swatch-hex">#FFFFFF</div>
+          <div class="swatch-use">Cards, superficies elevadas, fondos de formularios.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="color-usage reveal">
+      <h4>Cómo usar los colores</h4>
+      <div class="usage-row"><div class="usage-dot" style="background:#FF5A1F;"></div><div class="usage-text"><strong>Naranja:</strong> Botones primarios, íconos de acento, subrayados de títulos, badges de estado. Es el color que llama la atención — usarlo con intención, no en todo.</div></div>
+      <div class="usage-row"><div class="usage-dot" style="background:#111111;"></div><div class="usage-text"><strong>Negro:</strong> Textos principales, headers, fondo de secciones oscuras (hero, footer). El contrapeso del naranja.</div></div>
+      <div class="usage-row"><div class="usage-dot" style="background:#F7F4EF;border:1px solid #ddd;"></div><div class="usage-text"><strong>Crema:</strong> Fondo de página. Le da calidez y diferencia de plataformas genéricas. Nunca reemplazar por #F5F5F5 o gris frío.</div></div>
+      <div class="usage-row"><div class="usage-dot" style="background:#FFFFFF;border:1px solid #ddd;"></div><div class="usage-text"><strong>Blanco:</strong> Superficies de cards y formularios. Contrasta con el fondo crema para jerarquía visual.</div></div>
+      <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border);">
+        <p style="font-size:0.78rem;color:var(--gray);">⚠️ <strong>Nunca agregar colores adicionales</strong> sin aprobación del founder. Si necesitás colores funcionales (verde para éxito, rojo para error), usar los del sistema de diseño existente: verde #16A34A, rojo #DC2626.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ TIPOGRAFÍA ═══ -->
+  <div class="section reveal" id="tipografia">
+    <div class="section-num">07 — Tipografía</div>
+    <h2 class="section-title">Las fuentes de Mudar</h2>
+    <p class="section-desc">Solo dos familias tipográficas. Sin excepciones. Ambas disponibles gratuitamente en Google Fonts.</p>
+
+    <div class="typo-showcase reveal">
+      <div class="font-label">Display / Títulos</div>
+      <div class="font-name" style="font-family:'Outfit',sans-serif;">Outfit</div>
+      <div class="font-sub">google.com/fonts — Licencia OFL libre para uso comercial</div>
+      <div class="font-weights">
+        <div class="fw-sample"><div class="fw-label">Weight 800</div><div class="fw-text-outfit" style="font-weight:800;">Mudá sin estrés</div></div>
+        <div class="fw-sample"><div class="fw-label">Weight 900</div><div class="fw-text-outfit" style="font-weight:900;">Mudar.ar</div></div>
+        <div class="fw-sample"><div class="fw-label">Weight 700</div><div class="fw-text-outfit" style="font-weight:700;">Cotizá gratis</div></div>
+        <div class="fw-sample"><div class="fw-label">Weight 600</div><div class="fw-text-outfit" style="font-weight:600;">Empresas verificadas</div></div>
+      </div>
+    </div>
+
+    <div class="typo-showcase reveal">
+      <div class="font-label">Body / Cuerpo de texto</div>
+      <div class="font-name" style="font-family:'DM Sans',sans-serif;font-weight:500;">DM Sans</div>
+      <div class="font-sub">google.com/fonts — Licencia OFL libre para uso comercial</div>
+      <div class="font-weights">
+        <div class="fw-sample"><div class="fw-label">Regular 400</div><div class="fw-text-dm" style="font-weight:400;">El precio va directo a vos. Sin intermediarios.</div></div>
+        <div class="fw-sample"><div class="fw-label">Medium 500</div><div class="fw-text-dm" style="font-weight:500;">Cotizá en 2 minutos, sin llamadas.</div></div>
+        <div class="fw-sample"><div class="fw-label">SemiBold 600</div><div class="fw-text-dm" style="font-weight:600;">Empresas de flete verificadas</div></div>
+      </div>
+    </div>
+
+    <div class="typo-rules reveal">
+      <div class="typo-rule">
+        <h5>Jerarquía de títulos</h5>
+        <p><strong>H1:</strong> Outfit 900, 2.5–4rem, tracking -0.05em<br/><strong>H2:</strong> Outfit 800–900, 1.8–2.5rem, tracking -0.04em<br/><strong>H3:</strong> Outfit 700–800, 1.2–1.6rem<br/><strong>Tags/Labels:</strong> Outfit 700, 0.6rem, uppercase, letter-spacing 0.15em</p>
+      </div>
+      <div class="typo-rule">
+        <h5>Cuerpo de texto</h5>
+        <p><strong>Body:</strong> DM Sans 400, 0.85–1rem, line-height 1.65–1.75<br/><strong>Subtítulos:</strong> DM Sans 500–600<br/><strong>UI Labels:</strong> DM Sans 600–700<br/>No usar Outfit en textos de más de 2 líneas corridas.</p>
+      </div>
+      <div class="typo-rule">
+        <h5>Color de texto</h5>
+        <p>Texto principal: <strong>#111111</strong><br/>Texto secundario: <strong>#6B7280</strong><br/>Texto sobre oscuro: <strong>rgba(255,255,255,0.45)</strong><br/>Acento/highlight: <strong>#FF5A1F</strong></p>
+      </div>
+      <div class="typo-rule">
+        <h5>Lo que NO hacer</h5>
+        <p>❌ No usar Inter, Roboto, Arial o system fonts<br/>❌ No mezclar más de 2 familias<br/>❌ No usar Outfit en párrafos largos<br/>❌ No usar pesos menores a 400 en DM Sans para textos pequeños</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ VOZ & TONO ═══ -->
+  <div class="section reveal" id="voz">
+    <div class="section-num">08 — Voz & tono</div>
+    <h2 class="section-title">Cómo habla Mudar</h2>
+    <p class="section-desc">La voz de Mudar es constante. El tono varía según contexto. Leé esto antes de escribir cualquier copy.</p>
+
+    <div class="tone-grid reveal">
+      <div class="tone-card green-border">
+        <h4>✅ Así sí</h4>
+        <div class="tone-item">Voseo siempre — "cotizás", "elegís", "te contactamos"</div>
+        <div class="tone-item">Directo y al punto — no rodear la idea</div>
+        <div class="tone-item">Empático con el dolor de mudarse (es estresante)</div>
+        <div class="tone-item">Los fleteros son aliados y protagonistas</div>
+        <div class="tone-item">Simple — si puede decirse en menos palabras, hacelo</div>
+        <div class="tone-item">Confianza sin exagerar — no prometer lo que no existe</div>
+        <div class="tone-item">Tono argentino natural — no forzado ni lunfardo de museo</div>
+        <div class="tone-item">Hablar de procesos concretos ("en 2 minutos", "sin llamadas")</div>
+      </div>
+      <div class="tone-card red-border">
+        <h4>❌ Así no</h4>
+        <div class="tone-item">Lenguaje corporativo genérico ("soluciones innovadoras")</div>
+        <div class="tone-item">Anglicismos innecesarios ("booking", "onboarding")</div>
+        <div class="tone-item">Tuteo ("tú cotizas") — nunca</div>
+        <div class="tone-item">Criticar o señalar como problema a las empresas de mudanzas</div>
+        <div class="tone-item">Exagerar ("el mejor", "revolucionario", "disruptivo")</div>
+        <div class="tone-item">Prometer features que no existen todavía</div>
+        <div class="tone-item">Texto largo sin estructura cuando puede ser corto y claro</div>
+        <div class="tone-item">Emojis en exceso — usar con moderación y criterio</div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:8px;">
+      <div class="examples-list">
+        <div class="example-item">
+          <div class="example-context">Para usuarios — Hero / CTA principal</div>
+          <div class="example-copy">"Cotizá tu mudanza en 2 minutos. Comparás empresas verificadas con precios reales — sin llamadas, sin sorpresas."</div>
+        </div>
+        <div class="example-item">
+          <div class="example-context">Para fleteros — Propuesta de valor</div>
+          <div class="example-copy">"Sumá tu empresa a Mudar y llegá a clientes que te buscan. Vos seguís trabajando como siempre — nosotros te traemos la demanda."</div>
+        </div>
+        <div class="example-item">
+          <div class="example-context">Instagram — Caption empático</div>
+          <div class="example-copy">"¿Cuántas veces pediste presupuesto por WhatsApp y nunca te contestaron? En Mudar cotizás en 2 minutos y elegís la empresa que más te conviene. Sin vueltas."</div>
+        </div>
+        <div class="example-item">
+          <div class="example-context">Instagram — Para fleteros</div>
+          <div class="example-copy">"Las empresas de mudanzas construyen su negocio con esfuerzo y experiencia. Mudar está acá para que más clientes puedan encontrarlas."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ COPYS ═══ -->
+  <div class="section reveal" id="copys">
+    <div class="section-num">09 — Copys & mensajes clave</div>
+    <h2 class="section-title">Las frases que definen a Mudar</h2>
+    <p class="section-desc">Estos mensajes ya fueron validados y representan la voz de la marca. Usarlos como referencia para piezas nuevas.</p>
+
+    <div class="copy-grid reveal">
+      <div class="copy-card">
+        <div class="copy-label">Tagline principal</div>
+        <div class="copy-text">"Mudate sin estrés"</div>
+        <div class="copy-note">Usar siempre. Es el corazón de la marca.</div>
+      </div>
+      <div class="copy-card">
+        <div class="copy-label">Propuesta de valor — Usuarios</div>
+        <div class="copy-text">"Encontrá empresas de mudanzas confiables en tu zona. Cotizá gratis y comparás precios al instante."</div>
+        <div class="copy-note">Hero de la web. Puede adaptarse pero mantener la esencia.</div>
+      </div>
+      <div class="copy-card">
+        <div class="copy-label">Propuesta de valor — Fleteros</div>
+        <div class="copy-text">"Tu empresa, visible donde te buscan. Sin comisiones, sin intermediarios — solo clientes nuevos."</div>
+        <div class="copy-note">Para onboarding y campañas B2B.</div>
+      </div>
+      <div class="copy-card">
+        <div class="copy-label">CTAs aprobados</div>
+        <div class="copy-text">👤 Usuarios: "Cotizá gratis en mudar.ar"<br/>🚛 Fleteros: "Sumá tu empresa en mudar.ar"</div>
+        <div class="copy-note">Estos dos CTAs son los únicos aprobados. No improvisar variantes sin consultar.</div>
+      </div>
+      <div class="copy-card">
+        <div class="copy-label">Explicación del proceso (3 pasos)</div>
+        <div class="copy-text">1. Cargás tu mudanza en 2 minutos<br/>2. Comparás presupuestos de empresas verificadas<br/>3. Elegís y coordinás directamente</div>
+        <div class="copy-note">Para posts educativos, stories, infografías.</div>
+      </div>
+      <div class="copy-card">
+        <div class="copy-label">Frase sobre el modelo de negocio</div>
+        <div class="copy-text">"El dinero va directo a la empresa. Mudar no intermedia en los pagos — el modelo combina un componente fijo y uno variable alineado al resultado."</div>
+        <div class="copy-note">Para comunicar confianza a los fleteros.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;" class="reveal">
+      <h3 style="font-size:1rem;font-weight:800;margin-bottom:16px;">Do / Don't en copy</h3>
+      <div class="dont-grid">
+        <div class="dont-col good">
+          <h4>✅ Escribir así</h4>
+          <div class="dont-item">"Cotizá gratis. Comparás precios reales. Sin sorpresas."</div>
+          <div class="dont-item">"Las empresas de mudanzas trabajan con esfuerzo. Mudar les da más visibilidad."</div>
+          <div class="dont-item">"En 2 minutos sabés cuánto va a salir tu mudanza."</div>
+          <div class="dont-item">"Tres empresas verificadas te mandan presupuesto hoy."</div>
+        </div>
+        <div class="dont-col bad">
+          <h4>❌ Nunca escribir así</h4>
+          <div class="dont-item">"La solución innovadora para tus necesidades de traslado."</div>
+          <div class="dont-item">"Decile adiós a los fleteros poco profesionales."</div>
+          <div class="dont-item">"Tu booking de mudanza en un click."</div>
+          <div class="dont-item">"Somos el Uber de las mudanzas."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ REDES SOCIALES ═══ -->
+  <div class="section reveal" id="redes">
+    <div class="section-num">10 — Redes sociales</div>
+    <h2 class="section-title">Presencia digital</h2>
+    <p class="section-desc">El foco actual es Instagram (@Mudar_ar). La estrategia es construir audiencia orgánicamente antes de activar pauta paga.</p>
+
+    <div class="social-grid reveal">
+      <div class="social-card">
+        <div class="social-header">
+          <div class="social-icon social-icon-ig" style="color:white;font-size:1rem;width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;">📷</div>
+          <div>
+            <h4>@Mudar_ar — Instagram</h4>
+            <p style="font-size:0.72rem;color:var(--orange);font-weight:600;">Canal principal activo</p>
+          </div>
+        </div>
+        <p>La marca (no el founder) es el perfil. El tono es cercano, empático y nunca corporativo. Mostrar ambos lados del marketplace: usuarios y fleteros.</p>
+        <p style="margin-top:8px;font-size:0.78rem;color:var(--gray);">Etapa actual: construcción de audiencia orgánica. No activar pauta hasta tener 10+ empresas activas.</p>
+      </div>
+      <div class="social-card">
+        <div class="social-header">
+          <div style="width:36px;height:36px;border-radius:10px;background:#111;display:flex;align-items:center;justify-content:center;font-size:0.9rem;color:white;">🌐</div>
+          <div>
+            <h4>mudar.ar</h4>
+            <p style="font-size:0.72rem;color:var(--gray);font-weight:500;">Web + Panel de empresas</p>
+          </div>
+        </div>
+        <p>mudar.ar — Frontend principal con cotizador para usuarios. panel.mudar.ar — Panel privado para empresas de mudanzas con gestión de pedidos, agenda y tarifas.</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 style="font-size:0.9rem;font-weight:800;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.06em;">Pilares de contenido para Instagram</h3>
+      <div class="content-pillars">
+        <div class="pillar">
+          <div class="pillar-icon">💡</div>
+          <h5>Educativo</h5>
+          <p>Tips para mudarse, cómo comparar precios, qué preguntar al contratar</p>
+          <div class="pillar-pct">~30% del contenido</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🚛</div>
+          <h5>Fleteros protagonistas</h5>
+          <p>Historias, behind the scenes, presentar las empresas con nombre y cara</p>
+          <div class="pillar-pct">~25% del contenido</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🏠</div>
+          <h5>Social proof</h5>
+          <p>Experiencias de usuarios, testimonios, casos reales (con permiso)</p>
+          <div class="pillar-pct">~25% del contenido</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">📣</div>
+          <h5>Producto / Marca</h5>
+          <p>Features de la plataforma, cómo funciona, novedades</p>
+          <div class="pillar-pct">~20% del contenido</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ PRODUCTO & MODELO ═══ -->
+  <div class="section reveal" id="producto">
+    <div class="section-num">11 — Producto & modelo de negocio</div>
+    <h2 class="section-title">Cómo funciona Mudar</h2>
+    <p class="section-desc">Para que la agencia entienda el producto y no haga promesas equivocadas en las piezas.</p>
+
+    <div class="product-grid reveal">
+      <div class="product-card">
+        <div class="product-badge">👤 Para usuarios</div>
+        <h4>Cotizador gratuito</h4>
+        <p>El usuario completa un formulario en 2 minutos: origen, destino, tipo de vivienda, fecha. Recibe presupuestos de empresas verificadas con precios reales. Compara y contacta directamente. Siempre gratis.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-badge">🚛 Para empresas</div>
+        <h4>Panel de gestión</h4>
+        <p>Las empresas tienen un panel completo: reciben pedidos de Mudar, gestionan agenda, configuran tarifas propias y envían cotizaciones por WhatsApp. Todo en un solo lugar.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-badge">📊 Modelo</div>
+        <h4>Fijo + variable (en definición)</h4>
+        <p>El modelo exacto de monetización está en proceso de definición. La dirección apunta a un componente fijo (acceso a la plataforma y herramientas) más uno variable ligado a resultados — por lead recibido o mudanza concretada. El dinero del servicio siempre va directo de cliente a empresa.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-badge">🔐 Verificación</div>
+        <h4>Empresas verificadas</h4>
+        <p>No aceptamos a cualquiera. Las empresas pasan por un proceso de verificación antes de aparecer en los resultados. Es la promesa de confianza central del producto.</p>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- ═══ ALIANZAS ═══ -->
+  <div class="section reveal" id="alianzas">
+    <div class="section-num">12 — Alianzas estratégicas</div>
+    <h2 class="section-title">Con quién queremos crecer</h2>
+    <p class="section-desc">Mudar no solo conecta usuarios con fleteros. La visión a mediano plazo incluye alianzas que amplifican el alcance y el valor de la plataforma.</p>
+
+    <div class="alliance-grid reveal">
+      <div class="alliance-card">
+        <div class="alliance-card-icon">🏢</div>
+        <h4>Inmobiliarias</h4>
+        <p>Cada contrato de alquiler genera una mudanza. Las inmobiliarias socias pueden regalar un beneficio Mudar a sus nuevos inquilinos — sin costo para ellas, valor real para el cliente.</p>
+        <div class="status upcoming">🚀 En roadmap activo</div>
+      </div>
+      <div class="alliance-card">
+        <div class="alliance-card-icon">📦</div>
+        <h4>Empresas de guardamuebles</h4>
+        <p>Servicio complementario natural. El usuario que se muda a veces necesita almacenar temporalmente. Alianza de referidos mutuos.</p>
+        <div class="status future">📋 Futuro</div>
+      </div>
+      <div class="alliance-card">
+        <div class="alliance-card-icon">🔧</div>
+        <h4>Profesionales del hogar</h4>
+        <p>El próximo paso del marketplace: después de la mudanza, el usuario necesita electricistas, plomeros, pintores. Mudar como plataforma de servicios del hogar.</p>
+        <div class="status future">📋 En visión de producto</div>
+      </div>
+      <div class="alliance-card">
+        <div class="alliance-card-icon">💚</div>
+        <h4>Fundación para donaciones</h4>
+        <p>Integración con organizaciones sociales para facilitar la donación de muebles y objetos que no van en la mudanza. Componente de impacto social de la marca.</p>
+        <div class="status future">📋 En visión de producto</div>
+      </div>
+      <div class="alliance-card">
+        <div class="alliance-card-icon">📱</div>
+        <h4>App con GPS localizable</h4>
+        <p>Versión mobile con seguimiento en tiempo real del camión de mudanza. Transparencia total para el usuario el día de la mudanza.</p>
+        <div class="status future">📋 Roadmap 2026-2027</div>
+      </div>
+      <div class="alliance-card">
+        <div class="alliance-card-icon">🌎</div>
+        <h4>Expansión regional</h4>
+        <p>Córdoba, Rosario, Mendoza — y luego Chile y Uruguay. El modelo replicable en cualquier ciudad con mercado de mudanzas informal.</p>
+        <div class="status future">📋 Post-validación CABA</div>
+      </div>
+    </div>
+
+    <div style="background:var(--orange-light);border-radius:var(--radius);padding:24px;margin-top:20px;border:1px solid rgba(255,90,31,0.15);" class="reveal">
+      <h4 style="font-size:0.85rem;font-weight:800;color:var(--orange-dark);margin-bottom:8px;">⚠️ Importante para la agencia</h4>
+      <p style="font-size:0.82rem;color:var(--orange-dark);line-height:1.65;">Las funcionalidades marcadas como "En visión de producto" NO existen todavía y NO deben aparecer en comunicaciones actuales como si fueran features reales. Solo mencionar en contextos de visión a futuro (pitch, inversores) con el framing correcto: "estamos construyendo hacia" o "la visión de Mudar incluye". Nunca como promesas de hoy.</p>
+    </div>
+  </div>
+
+  <!-- ═══ ROADMAP ═══ -->
+  <div class="section reveal" id="roadmap">
+    <div class="section-num">13 — Roadmap</div>
+    <h2 class="section-title">A dónde va Mudar</h2>
+    <p class="section-desc">El contexto temporal es importante para que las campañas tengan el tono correcto — no hablar de escala cuando estamos validando.</p>
+
+    <div class="roadmap-list reveal">
+      <div class="rm-item">
+        <div class="rm-dot done">✓</div>
+        <div class="rm-item-date">Q3–Q4 2025</div>
+        <div class="rm-item-title">Validación y MVP</div>
+        <div class="rm-item-desc">Landing page, prototipo funcional, research de mercado y primeras conversaciones con empresas de mudanzas. Arquitectura técnica definida.</div>
+      </div>
+      <div class="rm-item">
+        <div class="rm-dot now">●</div>
+        <div class="rm-item-date">Q1 2026 — Ahora mismo <span class="rm-item-tag">Estamos acá</span></div>
+        <div class="rm-item-title">Primeras empresas reales</div>
+        <div class="rm-item-desc">3 empresas activas en CABA/GBA. Producto live en Vercel + Firebase. Onboarding de nuevas empresas. Construcción de audiencia en @Mudar_ar. Validación del modelo de negocio.</div>
+      </div>
+      <div class="rm-item">
+        <div class="rm-dot soon">3</div>
+        <div class="rm-item-date">Q2 2026</div>
+        <div class="rm-item-title">Lanzamiento público</div>
+        <div class="rm-item-desc">Apertura al público general en CABA y GBA. Primeras campañas de marketing (Meta Ads, Instagram). Alianzas con inmobiliarias. Objetivo: 10+ empresas activas.</div>
+      </div>
+      <div class="rm-item">
+        <div class="rm-dot soon">4</div>
+        <div class="rm-item-date">Q3–Q4 2026</div>
+        <div class="rm-item-title">Escala y expansión</div>
+        <div class="rm-item-desc">Expansión a Córdoba, Rosario y Mendoza. Reseñas verificadas, historial de mudanzas, chat integrado. Primeros profesionales del hogar en la plataforma.</div>
+      </div>
+      <div class="rm-item">
+        <div class="rm-dot soon">5</div>
+        <div class="rm-item-date">2027</div>
+        <div class="rm-item-title">Liderazgo regional</div>
+        <div class="rm-item-desc">Marketplace líder en Argentina. App con GPS. Integración con donaciones. Exploración de Chile y Uruguay.</div>
+      </div>
+    </div>
+
+    <!-- Cierre -->
+    <div style="background:var(--black);border-radius:var(--radius);padding:36px;margin-top:40px;text-align:center;" class="reveal">
+      <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);margin-bottom:12px;">Contacto</div>
+      <h3 style="font-family:'Outfit',sans-serif;font-size:1.5rem;font-weight:900;color:white;margin-bottom:8px;">¿Dudas? Contactar al founder</h3>
+      <p style="font-size:0.85rem;color:rgba(255,255,255,0.45);margin-bottom:20px;max-width:480px;margin-left:auto;margin-right:auto;">Cualquier decisión de copy, color, logo o tono fuera de lo documentado acá debe consultarse antes de ejecutar.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <div style="background:rgba(255,255,255,0.06);border-radius:50px;padding:10px 20px;font-size:0.8rem;color:rgba(255,255,255,0.6);">📧 jdileonforte@mudar.ar</div>
+        <div style="background:rgba(255,255,255,0.06);border-radius:50px;padding:10px 20px;font-size:0.8rem;color:rgba(255,255,255,0.6);">🌐 mudar.ar</div>
+        <div style="background:rgba(255,255,255,0.06);border-radius:50px;padding:10px 20px;font-size:0.8rem;color:rgba(255,255,255,0.6);">📱 @Mudar_ar</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+</div>
+
+<script>
+// Smooth scroll for sidebar links
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+  });
+});
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:0.08});
+reveals.forEach(r => observer.observe(r));
+
+// Active link on scroll
+const sections = document.querySelectorAll('.section, .hero-section');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if(window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  document.querySelectorAll('.nav-link').forEach(l => {
+    l.classList.remove('active');
+    if(l.getAttribute('href') === '#' + current || (current === 'intro' && l.getAttribute('href') === '#intro')) {
+      l.classList.add('active');
+    }
+  });
+});
+
+// Copy to clipboard
+function copyText(text) {
+  navigator.clipboard.writeText(text).then(() => showToast('¡Copiado! ' + text));
+}
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+</script>
+</body>
+</html>
