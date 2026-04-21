@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mudar — Propuesta de Alianza para Inmobiliarias</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--or:#FF5A1F;--dk:#111111;--cr:#F7F4EF;--wh:#FFFFFF;--gy:#8B8580;--bd:#E2DDD7}
+body{font-family:'DM Sans',sans-serif;background:#0A0908;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;gap:20px;padding:32px 16px}
+.deck{position:relative;width:min(960px,100%);aspect-ratio:16/9}
+.slide{position:absolute;inset:0;border-radius:16px;overflow:hidden;opacity:0;transform:translateX(36px) scale(.97);transition:opacity .35s ease,transform .35s ease;pointer-events:none}
+.slide.active{opacity:1;transform:none;pointer-events:all}
+.slide.exit{opacity:0;transform:translateX(-36px) scale(.98)}
+.si{width:100%;height:100%;padding:clamp(28px,5%,50px) clamp(32px,6%,58px);display:flex;flex-direction:column;position:relative;overflow:hidden}
+.th-dk{background:var(--dk);color:#fff}
+.th-cr{background:var(--cr);color:var(--dk)}
+.th-or{background:var(--or);color:#fff}
+.logo{display:flex;align-items:center;gap:9px;margin-bottom:clamp(20px,4%,36px)}
+.lico{width:32px;height:32px;border-radius:9px;background:var(--or);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.th-or .lico{background:rgba(0,0,0,.18)}
+.lico svg{width:17px;height:17px}
+.lwrd{font-family:'Outfit',sans-serif;font-weight:800;font-size:18px;letter-spacing:-.2px}
+.lbl{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;opacity:.45;margin-bottom:10px}
+.h1{font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(28px,5.2vw,50px);line-height:1.04;letter-spacing:-1.5px}
+.h2{font-family:'Outfit',sans-serif;font-weight:800;font-size:clamp(22px,3.8vw,36px);line-height:1.1;letter-spacing:-1px}
+.body{font-size:clamp(12px,1.5vw,14.5px);line-height:1.6;opacity:.7;max-width:480px}
+.body.wide{max-width:660px}
+.ac{color:var(--or)}
+.th-or .ac{color:var(--dk)}
+.mt8{margin-top:8px}.mt12{margin-top:12px}.mt16{margin-top:16px}.mt20{margin-top:20px}.mt-auto{margin-top:auto}
+/* S1 */
+.s1bot{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end}
+.s1url{font-size:12px;opacity:.35;letter-spacing:.5px}
+.s1tag{font-size:12px;opacity:.35;font-style:italic}
+.s1bg{position:absolute;right:-20px;top:50%;transform:translateY(-52%);font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(120px,22vw,220px);line-height:1;opacity:.035;pointer-events:none;user-select:none;letter-spacing:-8px}
+/* S2 */
+.cards3{display:flex;gap:10px;margin-top:18px;flex:1}
+.c3{flex:1;border-radius:10px;padding:16px 14px;display:flex;flex-direction:column;gap:8px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.05)}
+.c3.hi{background:rgba(255,90,31,.13);border-color:rgba(255,90,31,.3)}
+.c3icon{font-size:20px}
+.c3t{font-family:'Outfit',sans-serif;font-weight:700;font-size:clamp(13px,1.8vw,16px);line-height:1.2}
+.c3b{font-size:clamp(11px,1.3vw,13px);line-height:1.5;opacity:.6}
+/* S3 */
+.grid4{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px;flex:1}
+.g4c{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:16px 14px;display:flex;flex-direction:column;gap:6px}
+.g4icon{font-size:18px}
+.g4t{font-family:'Outfit',sans-serif;font-weight:700;font-size:clamp(12px,1.6vw,14.5px);line-height:1.2}
+.g4b{font-size:clamp(10.5px,1.25vw,12.5px);line-height:1.5;opacity:.6}
+/* S4 */
+.steps{display:flex;flex-direction:column;gap:14px;margin-top:18px;max-width:52%}
+.srow{display:flex;align-items:flex-start;gap:14px}
+.snum{width:30px;height:30px;border-radius:50%;background:var(--or);color:#fff;font-family:'Outfit',sans-serif;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.stit{font-family:'Outfit',sans-serif;font-weight:700;font-size:clamp(12px,1.6vw,14.5px);color:var(--dk)}
+.sdesc{font-size:clamp(10.5px,1.2vw,12.5px);line-height:1.5;color:var(--gy);margin-top:2px}
+.s4box{position:absolute;right:clamp(24px,5%,52px);top:50%;transform:translateY(-50%);background:var(--dk);border-radius:12px;padding:20px 18px;width:clamp(180px,28%,240px);display:flex;flex-direction:column;gap:10px}
+.s4bt{font-family:'Outfit',sans-serif;font-weight:800;font-size:12px;color:#fff;letter-spacing:.2px}
+.s4bi{display:flex;align-items:flex-start;gap:8px;font-size:11.5px;color:rgba(255,255,255,.7);line-height:1.4}
+.s4bi::before{content:'✓';width:16px;height:16px;min-width:16px;border-radius:50%;background:var(--or);color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.s4div{height:1px;background:rgba(255,255,255,.08)}
+.s4f5{font-size:11px;color:var(--or);font-weight:600}
+/* S5 */
+.s5mid{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.s5btn{display:inline-block;margin-top:20px;padding:12px 30px;background:#fff;color:var(--or);border-radius:100px;font-family:'Outfit',sans-serif;font-weight:800;font-size:17px;letter-spacing:-.2px;text-decoration:none}
+.s5sub{margin-top:10px;font-size:12px;opacity:.55}
+.s5foot{display:flex;justify-content:center;gap:24px;margin-top:auto;padding-top:14px;border-top:1px solid rgba(255,255,255,.12)}
+.s5fc{font-size:11.5px;opacity:.45}
+/* nav */
+.nav{display:flex;align-items:center;gap:14px}
+.nb{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:rgba(255,255,255,.8);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.nb:hover{background:rgba(255,255,255,.14)}
+.nb:disabled{opacity:.2;cursor:default}
+.dots{display:flex;gap:7px}
+.dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:background .2s,transform .2s}
+.dot.active{background:var(--or);transform:scale(1.35)}
+.ctr{font-size:11px;color:rgba(255,255,255,.35);letter-spacing:.5px;min-width:36px;text-align:center}
+</style>
+</head>
+<body>
+
+<div class="deck">
+
+  <!-- S1 COVER -->
+  <div class="slide th-dk active" id="s1">
+    <div class="si">
+      <div class="logo">
+        <div class="lico"><svg viewBox="0 0 24 24" fill="none"><path d="M1 12L4 9M4 9L12 3L20 9M4 9V20a1 1 0 001 1h4M20 9v11a1 1 0 01-1 1h-4M9 21v-6a1 1 0 011-1h4a1 1 0 011 1v6M9 21h6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="lwrd">Mudar</span>
+      </div>
+      <div class="lbl">Propuesta de alianza</div>
+      <div class="h1">Un servicio más<br>para cada cliente<br>que <span class="ac">cerrás.</span></div>
+      <div class="body mt16">Cada contrato firmado viene con una mudanza. Te contamos cómo podés ofrecer algo más — sin costo y sin esfuerzo.</div>
+      <div class="s1bg">M</div>
+      <div class="s1bot">
+        <span class="s1url">mudar.ar</span>
+        <span class="s1tag">Mudáte sin estrés.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- S2 EL MOMENTO -->
+  <div class="slide th-dk" id="s2">
+    <div class="si">
+      <div class="logo">
+        <div class="lico"><svg viewBox="0 0 24 24" fill="none"><path d="M1 12L4 9M4 9L12 3L20 9M4 9V20a1 1 0 001 1h4M20 9v11a1 1 0 01-1 1h-4M9 21v-6a1 1 0 011-1h4a1 1 0 011 1v6M9 21h6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="lwrd">Mudar</span>
+      </div>
+      <div class="lbl">El momento clave</div>
+      <div class="h2">Firma el contrato.<br>En <span class="ac">2 a 3 semanas,</span> se muda.</div>
+      <div class="cards3">
+        <div class="c3">
+          <div class="c3icon">🏠</div>
+          <div class="c3t">El cliente ya sabe que se muda</div>
+          <div class="c3b">Justo después de firmar, empieza a buscar cómo organizar la mudanza. Todavía no tiene nada definido.</div>
+        </div>
+        <div class="c3">
+          <div class="c3icon">🔍</div>
+          <div class="c3t">El mercado es un caos</div>
+          <div class="c3b">Precios opacos, empresas sin presencia digital, llamadas en frío. No hay forma fácil de comparar con confianza.</div>
+        </div>
+        <div class="c3 hi">
+          <div class="c3icon">⚡</div>
+          <div class="c3t">Ahí aparece <span class="ac">Mudar</span></div>
+          <div class="c3b">La primera plataforma argentina para cotizar, comparar y contactar empresas de flete verificadas. Simple y transparente.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S3 QUÉ GANÁS -->
+  <div class="slide th-dk" id="s3">
+    <div class="si">
+      <div class="logo">
+        <div class="lico"><svg viewBox="0 0 24 24" fill="none"><path d="M1 12L4 9M4 9L12 3L20 9M4 9V20a1 1 0 001 1h4M20 9v11a1 1 0 01-1 1h-4M9 21v-6a1 1 0 011-1h4a1 1 0 011 1v6M9 21h6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="lwrd">Mudar</span>
+      </div>
+      <div class="lbl">Qué ganás vos</div>
+      <div class="h2">Un diferencial real<br>para tu <span class="ac">inmobiliaria.</span></div>
+      <div class="grid4">
+        <div class="g4c">
+          <div class="g4icon">🎁</div>
+          <div class="g4t">Servicio adicional sin costo</div>
+          <div class="g4b">Le ofrecés a tu cliente una herramienta útil, justo cuando la necesita. No te cuesta nada y suma valor real.</div>
+        </div>
+        <div class="g4c">
+          <div class="g4icon">⭐</div>
+          <div class="g4t">Mejor experiencia post-firma</div>
+          <div class="g4b">La relación con el cliente no termina en el contrato. Acompañarlo en la mudanza te diferencia de la competencia.</div>
+        </div>
+        <div class="g4c">
+          <div class="g4icon">🌐</div>
+          <div class="g4t">Exposición en mudar.ar</div>
+          <div class="g4b">Las primeras 5 inmobiliarias aliadas aparecen con su logo en nuestra plataforma, frente a todos los usuarios.</div>
+        </div>
+        <div class="g4c">
+          <div class="g4icon">📈</div>
+          <div class="g4t">Crecemos juntos</div>
+          <div class="g4b">Ser socio fundador te posiciona con ventaja frente a las inmobiliarias que se sumen después.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S4 CÓMO FUNCIONA -->
+  <div class="slide th-cr" id="s4">
+    <div class="si">
+      <div class="logo">
+        <div class="lico" style="background:var(--or)"><svg viewBox="0 0 24 24" fill="none"><path d="M1 12L4 9M4 9L12 3L20 9M4 9V20a1 1 0 001 1h4M20 9v11a1 1 0 01-1 1h-4M9 21v-6a1 1 0 011-1h4a1 1 0 011 1v6M9 21h6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="lwrd">Mudar</span>
+      </div>
+      <div class="lbl">Cómo funciona la alianza</div>
+      <div class="h2">Simple. <span class="ac">Tres</span> pasos.</div>
+      <div class="steps">
+        <div class="srow">
+          <div class="snum">1</div>
+          <div>
+            <div class="stit">Acordamos la alianza</div>
+            <div class="sdesc">Sin costo ni compromisos económicos. Solo la intención de trabajar juntos para beneficiar a tus clientes.</div>
+          </div>
+        </div>
+        <div class="srow">
+          <div class="snum">2</div>
+          <div>
+            <div class="stit">Compartís mudar.ar a cada nuevo cliente</div>
+            <div class="sdesc">Al momento de firmar, les recomendás la plataforma. Un mensaje, un flyer o una mención directa.</div>
+          </div>
+        </div>
+        <div class="srow">
+          <div class="snum">3</div>
+          <div>
+            <div class="stit">El cliente cotiza gratis y elige</div>
+            <div class="sdesc">Compara empresas verificadas y contrata directo. Sin intermediarios, sin sorpresas.</div>
+          </div>
+        </div>
+      </div>
+      <div class="s4box">
+        <div class="s4bt">Las primeras 5 aliadas reciben:</div>
+        <div class="s4bi">Logo en mudar.ar</div>
+        <div class="s4bi">Mención en redes sociales</div>
+        <div class="s4bi">Badge "Aliada fundadora"</div>
+        <div class="s4div"></div>
+        <div class="s4f5">Solo 5 lugares disponibles.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S5 CTA -->
+  <div class="slide th-or" id="s5">
+    <div class="si">
+      <div class="logo">
+        <div class="lico"><svg viewBox="0 0 24 24" fill="none"><path d="M1 12L4 9M4 9L12 3L20 9M4 9V20a1 1 0 001 1h4M20 9v11a1 1 0 01-1 1h-4M9 21v-6a1 1 0 011-1h4a1 1 0 011 1v6M9 21h6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="lwrd">Mudar</span>
+      </div>
+      <div class="s5mid">
+        <div class="h1" style="font-size:clamp(26px,4.8vw,46px)">¿Arrancamos?</div>
+        <div class="body wide mt12" style="text-align:center;opacity:.75;color:#fff;max-width:440px">La alianza no tiene costo. Solo compartís mudar.ar con cada cliente que cierra — y ellos se mudan sin estrés.</div>
+        <a href="https://mudar.ar" class="s5btn" target="_blank">mudar.ar</a>
+        <div class="s5sub">Cotizá en 2 minutos · Empresas verificadas · Sin intermediarios</div>
+      </div>
+      <div class="s5foot">
+        <span class="s5fc">jdileonforte@mudar.ar</span>
+        <span class="s5fc">@Mudar_ar</span>
+        <span class="s5fc">mudar.ar</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="nav">
+  <button class="nb" id="prev" onclick="go(-1)" disabled>←</button>
+  <div class="dots" id="dots"></div>
+  <span class="ctr" id="ctr">1 / 5</span>
+  <button class="nb" id="next" onclick="go(1)">→</button>
+</div>
+
+<script>
+const sls=document.querySelectorAll('.slide'),dotsEl=document.getElementById('dots'),ctrEl=document.getElementById('ctr');
+let cur=0;
+sls.forEach((_,i)=>{const d=document.createElement('div');d.className='dot'+(i===0?' active':'');d.onclick=()=>goTo(i);dotsEl.appendChild(d)});
+function goTo(n){
+  sls[cur].classList.remove('active');sls[cur].classList.add('exit');
+  setTimeout(()=>sls[cur].classList.remove('exit'),380);
+  cur=n;sls[cur].classList.add('active');
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
+  document.getElementById('prev').disabled=cur===0;
+  document.getElementById('next').disabled=cur===sls.length-1;
+  ctrEl.textContent=(cur+1)+' / '+sls.length;
+}
+function go(d){const n=cur+d;if(n>=0&&n<sls.length)goTo(n)}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowDown')go(1);if(e.key==='ArrowLeft'||e.key==='ArrowUp')go(-1)});
+</script>
+</body>
+</html>
